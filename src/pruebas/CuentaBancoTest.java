@@ -25,28 +25,28 @@ public class CuentaBancoTest {
 
     @Before // Este método se ejecuta antes de CADA prueba
     public void creaCuentaBanco() {
-        cuenta=new CuentaBanco(1500,"abc123");
+        cuenta=new CuentaBanco(1500,"abc123"); // Se crea una instancia de la clase CuentaBanco
         System.out.println("Probando método...");
     }
 
 
     @After // Este método se ejecuta después de CADA prueba
     public void borraCuentaBanco() {
-        cuenta=null;
+        cuenta=null; // Se borra la instancia de la clase CuentaBanco para que no interfiera con las pruebas siguientes
         System.out.println("...Fin prueba de método");
     }
 
 
     @org.junit.Test // Este método es una prueba
     public void testIngresar() {
-        CuentaBanco cuenta=new CuentaBanco(1500,"abc123");
+        //CuentaBanco cuenta=new CuentaBanco(1500,"abc123");
         int resultado=cuenta.ingresar(500);
         assertEquals("fallo al ingresar",2000,resultado);
     }
 
     @org.junit.Test
     public void testRetirar() {
-        CuentaBanco cuenta=new CuentaBanco(1500,"abc123");
+        //CuentaBanco cuenta=new CuentaBanco(1500,"abc123");
         int resultado=cuenta.retirar(500,"abc123");
         assertEquals("fallo de prueba (retirar)",1000,resultado);
     }
@@ -54,7 +54,7 @@ public class CuentaBancoTest {
 
     @org.junit.Test
     public void testPasswordCorrecta() {
-        CuentaBanco cuenta=new CuentaBanco(1500, "abc123");
+        //CuentaBanco cuenta=new CuentaBanco(1500, "abc123");
         boolean resultado = cuenta.passwordCorrecta("abc123");
         assertTrue("No es true, contraseña errónea", resultado);
 
